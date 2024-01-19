@@ -35,11 +35,28 @@ const nextButton = document.getElementById("next-btn");
 let currentQuestionIndex = 0;
 let score = 0;
 
+const timerElement = document.getElementById("timer");
+let timer;
+let countdown = 60; 
+
+function startTimer() {
+    timer = setInterval(function () {
+        countdown--;
+        timerElement.innerHTML = `Time left: ${countdown} seconds`;
+
+        if (countdown <= 0) {
+            clearInterval(timer);
+            showScore();
+        }
+    }, 1000);
+}
+
 function startQuiz() {
     currentQuestionIndex = 0;
     score = 0;
     nextButton.innerHTML = "Next";
     showQuestion();
+    startTimer();
 }
 
 function showQuestion () {
@@ -87,6 +104,7 @@ function selectAnswer(e) {
     nextButton.style.display = "block";
 }
 function showScore() {
+    clearInterval(timer); 
     resetState();
     questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
     nextButton.innerHTML = "Play Again";
@@ -94,6 +112,7 @@ function showScore() {
 }
 
 function handleNextButton() {
+    clearInterval(timer);
     currentQuestionIndex++;
     if (currentQuestionIndex < questions.length) {
         showQuestion ();
@@ -101,7 +120,6 @@ function handleNextButton() {
         showScore();
     }
 }
-
 
 nextButton.addEventListener("click", () => {
     if(currentQuestionIndex < questions.length) {
@@ -112,3 +130,5 @@ nextButton.addEventListener("click", () => {
 });
 
 startQuiz();
+
+
