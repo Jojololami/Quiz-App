@@ -26,6 +26,69 @@ const questions = [
         {text:"10", correct:false},
     ]
 },
+{
+    question:"How many days make a leap year?",
+    answers: [
+        {text:"365", correct:false},
+        {text:"366", correct:true},
+        {text:"360", correct:false},
+        {text:"300", correct:false},
+    ]
+},
+{
+    question:"How many days make a year?",
+    answers: [
+        {text:"365", correct:true},
+        {text:"366", correct:false},
+        {text:"360", correct:false},
+        {text:"300", correct:false},
+    ]
+},
+{
+    question:"How many days are in January?",
+    answers: [
+        {text:"30", correct:false},
+        {text:"31", correct:true},
+        {text:"29", correct:false},
+        {text:"28", correct:false},
+    ]
+},
+{
+    question:"How many days are in February?",
+    answers: [
+        {text:"30", correct:false},
+        {text:"31", correct:false},
+        {text:"29", correct:false},
+        {text:"28", correct:true},
+    ]
+},
+{
+    question:"How many days are in March?",
+    answers: [
+        {text:"30", correct:false},
+        {text:"31", correct:true},
+        {text:"29", correct:false},
+        {text:"28", correct:false},
+    ]
+},
+{
+    question:"How many days are in April?",
+    answers: [
+        {text:"30", correct:true},
+        {text:"31", correct:false},
+        {text:"29", correct:false},
+        {text:"28", correct:false},
+    ]
+},
+{
+    question:"How many days are in May?",
+    answers: [
+        {text:"30", correct:false},
+        {text:"31", correct:true},
+        {text:"29", correct:false},
+        {text:"28", correct:false},
+    ]
+},
 ];
 
 const questionElement = document.getElementById("question");
